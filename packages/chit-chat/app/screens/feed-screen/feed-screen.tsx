@@ -1,13 +1,24 @@
-import {  FlatList, Image, Modal, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  FlatList,
+  Image,
+  Modal,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { useState } from 'react';
 import { SAMPLE_POSTS } from '../../../constants';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 // Profile Screen
 
 // Settings Screen
 // Feed Screen Component
-export const FeedScreen = ({ navigation }) => {
+export const FeedScreen = ({}) => {
+  const navigation = useNavigation();
+
   const [posts, setPosts] = useState(SAMPLE_POSTS);
   const [showNewPost, setShowNewPost] = useState(false);
   const [newPost, setNewPost] = useState('');

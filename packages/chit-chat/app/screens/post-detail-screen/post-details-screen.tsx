@@ -1,9 +1,19 @@
-import { useState } from "react";
-import { styles } from "./style";
-import {  Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useState } from 'react';
+import { styles } from './style';
+import {
+  Image,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 // Post Detail Screen
-export const PostDetailScreen = ({ route, navigation }) => {
+export const PostDetailScreen = ({ route }) => {
+  const navigation = useNavigation();
+
   const { post } = route.params;
   const [liked, setLiked] = useState(post.liked);
   const [likes, setLikes] = useState(post.likes);

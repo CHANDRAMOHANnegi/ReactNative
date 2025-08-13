@@ -1,6 +1,9 @@
 // types/navigation.ts
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
+import {
+  CompositeScreenProps,
+  NavigatorScreenParams,
+} from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 // User type definition
@@ -58,7 +61,7 @@ export type ChatStackParamList = {
 
 // Profile Stack param list
 export type ProfileStackParamList = {
-  ProfileMain: undefined;
+  ProfileMain: { user: User };
   EditProfile: undefined;
   Settings: undefined;
   SavedPosts: undefined;
@@ -79,22 +82,22 @@ export type RootStackParamList = {
 };
 
 // Screen props type helpers
-export type FeedStackScreenProps<T extends keyof FeedStackParamList> = 
+export type FeedStackScreenProps<T extends keyof FeedStackParamList> =
   NativeStackScreenProps<FeedStackParamList, T>;
 
-export type ChatStackScreenProps<T extends keyof ChatStackParamList> = 
+export type ChatStackScreenProps<T extends keyof ChatStackParamList> =
   NativeStackScreenProps<ChatStackParamList, T>;
 
-export type ProfileStackScreenProps<T extends keyof ProfileStackParamList> = 
+export type ProfileStackScreenProps<T extends keyof ProfileStackParamList> =
   NativeStackScreenProps<ProfileStackParamList, T>;
 
-export type MainTabScreenProps<T extends keyof MainTabParamList> = 
+export type MainTabScreenProps<T extends keyof MainTabParamList> =
   CompositeScreenProps<
     BottomTabScreenProps<MainTabParamList, T>,
     NativeStackScreenProps<RootStackParamList>
   >;
 
-export type RootStackScreenProps<T extends keyof RootStackParamList> = 
+export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 
 // Declare global types for React Navigation

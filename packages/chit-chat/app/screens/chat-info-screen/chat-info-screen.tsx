@@ -1,8 +1,11 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 // Chat Info Screen
-export const ChatInfoScreen = ({ route, navigation }) => {
+export const ChatInfoScreen = ({ route }) => {
+  const navigation = useNavigation();
+
   const { chat } = route.params;
 
   return (

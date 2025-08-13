@@ -1,8 +1,10 @@
-import { View,TouchableOpacity,Text, FlatList, Image } from "react-native";
-import { styles } from "./style";
+import { View, TouchableOpacity, Text, FlatList, Image } from 'react-native';
+import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 // Saved Posts Screen
-export const SavedPostsScreen = ({ navigation }) => {
+export const SavedPostsScreen = ({}) => {
+  const navigation = useNavigation();
   const savedPosts = [
     {
       id: '1',

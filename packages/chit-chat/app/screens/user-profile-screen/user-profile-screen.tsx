@@ -1,12 +1,15 @@
-import { View,TouchableOpacity,Text, FlatList, Image, ScrollView } from "react-native";
-import { styles } from "./style";
-import { useState } from "react";
+import { View, TouchableOpacity, Text, Image, ScrollView } from 'react-native';
+import { styles } from './style';
+import { useState } from 'react';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { ProfileStackScreenProps } from '../../../navigation/navigator';
 
 // Saved Posts Screen
-export const UserProfileScreen = ({ route, navigation }) => {
+export const UserProfileScreen = ({}) => {
+  const route = useRoute<ProfileStackScreenProps<'ProfileMain'>['route']>();
   const { user } = route.params;
   const [isFollowing, setIsFollowing] = useState(false);
-
+  const navigation = useNavigation();
   return (
     <View style={styles.screen}>
       <View style={styles.detailHeader}>
@@ -90,4 +93,3 @@ export const UserProfileScreen = ({ route, navigation }) => {
     </View>
   );
 };
-

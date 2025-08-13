@@ -1,11 +1,13 @@
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 // Profile Screen
 
 // Settings Screen
 
-export const SettingsScreen = ({ navigation }) => {
+export const SettingsScreen = ({}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.screen}>
       <View style={styles.detailHeader}>

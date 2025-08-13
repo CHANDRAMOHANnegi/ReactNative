@@ -10,9 +10,12 @@ import { useState } from 'react';
 import { SAMPLE_CHATS } from '../../../constants';
 // import { useNavigation } from '@react-navigation/native';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 // Chat List Screen
-export const ChatListScreen = ({navigation}) => {
+export const ChatListScreen = ({}) => {
+  const navigation = useNavigation();
+
   // const navigation = useNavigation();
 
   const [chats] = useState(SAMPLE_CHATS);

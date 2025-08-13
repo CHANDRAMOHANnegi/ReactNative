@@ -199,4 +199,10 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#ffffff',
   },
+    settingsIcon: {
+    fontSize: 20,
+    marginRight: 16,
+    width: 24,
+    textAlign: 'center',
+  },
 });

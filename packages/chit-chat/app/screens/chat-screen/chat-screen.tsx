@@ -1,10 +1,23 @@
-import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  Alert,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { useState } from 'react';
 import { SAMPLE_MESSAGES } from '../../../constants';
 import { styles } from './style';
+import { useNavigation } from '@react-navigation/native';
 
 // Individual Chat Screen
-export const ChatScreen = ({ route, navigation }) => {
+export const ChatScreen = ({ route }) => {
+  const navigation = useNavigation();
+
   const { chat } = route.params;
   const [messages, setMessages] = useState(SAMPLE_MESSAGES);
   const [newMessage, setNewMessage] = useState('');

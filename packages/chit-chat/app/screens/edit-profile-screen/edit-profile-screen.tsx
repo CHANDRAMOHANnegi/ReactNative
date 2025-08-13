@@ -9,8 +9,11 @@ import {
 } from 'react-native';
 import { styles } from './style';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-export const EditProfileScreen = ({ navigation }) => {
+export const EditProfileScreen = ({}) => {
+  const navigation = useNavigation();
+
   const [name, setName] = useState('Your Name');
   const [username, setUsername] = useState('yourusername');
   const [bio, setBio] = useState('Your bio goes here');

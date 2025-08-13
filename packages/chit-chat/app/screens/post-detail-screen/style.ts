@@ -195,4 +195,8 @@ export const styles = StyleSheet.create({
     color: '#ffffff',
     fontWeight: 'bold',
   },
+   sendIcon: {
+    fontSize: 16,
+    color: '#ffffff',
+  },
 });

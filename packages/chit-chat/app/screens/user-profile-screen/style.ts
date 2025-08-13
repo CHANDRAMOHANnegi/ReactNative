@@ -155,5 +155,62 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
-
+  postUserInfo: {
+    flex: 1,
+  },
+  postUserName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  postUsername: {
+    fontSize: 14,
+    color: '#666',
+  },
+  postContent: {
+    fontSize: 16,
+    color: '#333',
+    lineHeight: 22,
+    marginBottom: 12,
+  },
+  postActions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 8,
+  },
+  actionButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  actionIcon: {
+    fontSize: 18,
+    marginRight: 4,
+  },
+  actionCount: {
+    fontSize: 14,
+    color: '#666',
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 16,
+  },
+  postCard: {
+    backgroundColor: '#ffffff',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
+  },
+  postHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  avatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginRight: 12,
+  },
 });
