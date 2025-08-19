@@ -7,21 +7,38 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useState } from 'react';
-import { SAMPLE_POSTS } from '../../../constants';
+import { useEffect, useState } from 'react';
 import { styles } from './style';
 import { useNavigation } from '@react-navigation/native';
+import { SAMPLE_POSTS } from '../../../constants';
 
-// Profile Screen
+async function getPosts() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(SAMPLE_POSTS);
+    }, 2000);
+  });
+}
 
-// Settings Screen
-// Feed Screen Component
 export const FeedScreen = ({}) => {
   const navigation = useNavigation();
 
   const [posts, setPosts] = useState(SAMPLE_POSTS);
   const [showNewPost, setShowNewPost] = useState(false);
   const [newPost, setNewPost] = useState('');
+
+  useEffect(() => {
+    getPosts()
+      .then(d => {
+        setPosts(prevPosts => [...d, ...prevPosts]);
+      })
+      .catch(er => {
+        console.log(er);
+      });
+    return () => {};
+  }, []);
+
+  console.log(posts);
 
   const handleLike = postId => {
     setPosts(

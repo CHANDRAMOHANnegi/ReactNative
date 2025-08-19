@@ -67,11 +67,18 @@ export type ProfileStackParamList = {
   SavedPosts: undefined;
 };
 
+// Profile Stack param list
+export type ComponentsStackParamList = {
+  Components?: undefined;
+  Animations?: undefined;
+};
+
 // Main Tab param list
 export type MainTabParamList = {
   Feed: NavigatorScreenParams<FeedStackParamList>;
   Chats: NavigatorScreenParams<ChatStackParamList>;
   Profile: NavigatorScreenParams<ProfileStackParamList>;
+  Components: NavigatorScreenParams<ComponentsStackParamList>;
 };
 
 // Root Stack param list (if you have a root stack navigator)
@@ -106,3 +113,6 @@ declare global {
     interface RootParamList extends RootStackParamList {}
   }
 }
+
+
+

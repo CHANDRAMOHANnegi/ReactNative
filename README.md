@@ -95,3 +95,37 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+1. Merge Intervals: https://lnkd.in/eHYvV9WA
+2. Koko Eating Bananas: https://lnkd.in/e7rHMBWf
+3. Search in Rotated Sorted Array: https://lnkd.in/dK2piUNv
+4. Detect a Cycle in Linked List: https://lnkd.in/emb89Bm5
+6. Sort Items by Groups Respecting Dependencies: https://lnkd.in/eP7_hhYU
+5. Word Search II: https://lnkd.in/eQdufncV
+7. Course Schedule II: https://lnkd.in/gwzm5iau
+8. Merge K Sorted Lists: https://lnkd.in/eAfqQmsc
+9. Smallest Range Covering Elements from K Lists: https://lnkd.in/eVuU6zHw
+10. Count Unique Characters of All Substrings of a Given String: https://lnkd.in/eizMzqv7
+11. Minimum Window Substring: https://lnkd.in/eCcc5bPW
+
+12. Concatenated Words: https://lnkd.in/eHh_xuGz
+13. Prefix and Suffix Search: https://lnkd.in/epHcyE_e
+14. Palindrome Pairs: https://lnkd.in/ehp_B9AB
+15. Trapping Rain Water: https://lnkd.in/e5K-sZtp
+16. Gas Station: https://lnkd.in/ef5Y8TDy
+17. Sliding Window Maximum: https://lnkd.in/eMUFRJR5
+18. Coin Change: https://lnkd.in/ercepMHZ
+19. Word Break: https://lnkd.in/e94ANxqa
+20. Edit Distance: https://lnkd.in/d7UqYG2b
+21. Largest Rectangle in a Histogram: https://lnkd.in/eWZpcYRv
+22. Rod Cutting: https://lnkd.in/ec83KDZr
+23. Binary Tree Maximum Path Sum: https://lnkd.in/ejRpAN9t
+24. Number of Distinct Islands: https://lnkd.in/eiM8yuwg
+25. Rotten Oranges: https://lnkd.in/evB34q_q
+26. Course Schedule II: https://lnkd.in/eSiS3QWf
+27. Pacific Atlantic Water Flow: https://lnkd.in/e5bnPFiG
+28. Cheapest Flights Within K Stops: https://lnkd.in/eZ9NmFFq
+29. Min Cost to Connect All Points: https://lnkd.in/enq9zsBC
+30. Count of Range Sum: https://lnkd.in/eANE2GcU

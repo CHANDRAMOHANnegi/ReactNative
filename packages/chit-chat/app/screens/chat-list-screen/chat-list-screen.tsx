@@ -6,11 +6,63 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { SAMPLE_CHATS } from '../../../constants';
 // import { useNavigation } from '@react-navigation/native';
 import { styles } from './style';
 import { useNavigation } from '@react-navigation/native';
+import { Animated, PanResponder } from 'react-native';
+
+const RenderItem = ({ item, onItemRemove }) => {
+  const pan = useRef(new Animated.ValueXY()).current;
+  const navigation = useNavigation();
+
+  const panResponder = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: () => true,
+      onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }]),
+      onPanResponderRelease: (_, state) => {
+        if (state.dx > 100) {
+          onItemRemove(item);
+          pan.extractOffset();
+        }
+      },
+    }),
+  ).current;
+
+  console.log(pan.getLayout());
+  
+
+  return (
+    <Animated.View {...panResponder.panHandlers} style={[pan.getLayout()]}>
+      <TouchableOpacity
+        style={styles.chatItem}
+        onPress={() => navigation.navigate('ChatScreen', { chat: item })}
+      >
+        <Image source={{ uri: item.avatar }} style={styles.chatAvatar} />
+        <View style={styles.chatInfo}>
+          <View style={styles.chatHeader}>
+            <Text style={styles.chatName}>
+              {item.isGroup && '👥 '}
+              {item.name}
+            </Text>
+            <Text style={styles.chatTime}>{item.timestamp}</Text>
+          </View>
+          <View style={styles.chatPreview}>
+            <Text style={styles.chatLastMessage} numberOfLines={1}>
+              {item.lastMessage}
+            </Text>
+            {item.unread > 0 && (
+              <View style={styles.unreadBadge}>
+                <Text style={styles.unreadCount}>{item.unread}</Text>
+              </View>
+            )}
+          </View>
+        </View>
+      </TouchableOpacity>
+    </Animated.View>
+  );
+};
 
 // Chat List Screen
 export const ChatListScreen = ({}) => {
@@ -18,8 +70,12 @@ export const ChatListScreen = ({}) => {
 
   // const navigation = useNavigation();
 
-  const [chats] = useState(SAMPLE_CHATS);
+  const [chats, setChats] = useState(SAMPLE_CHATS);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const handleRemoveItem = item => {
+    setChats(prevChats => prevChats.filter(chat => chat.id !== item.id));
+  };
 
   return (
     <View style={styles.screen}>
@@ -45,31 +101,7 @@ export const ChatListScreen = ({}) => {
         data={chats}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            style={styles.chatItem}
-            onPress={() => navigation.navigate('ChatScreen', { chat: item })}
-          >
-            <Image source={{ uri: item.avatar }} style={styles.chatAvatar} />
-            <View style={styles.chatInfo}>
-              <View style={styles.chatHeader}>
-                <Text style={styles.chatName}>
-                  {item.isGroup && '👥 '}
-                  {item.name}
-                </Text>
-                <Text style={styles.chatTime}>{item.timestamp}</Text>
-              </View>
-              <View style={styles.chatPreview}>
-                <Text style={styles.chatLastMessage} numberOfLines={1}>
-                  {item.lastMessage}
-                </Text>
-                {item.unread > 0 && (
-                  <View style={styles.unreadBadge}>
-                    <Text style={styles.unreadCount}>{item.unread}</Text>
-                  </View>
-                )}
-              </View>
-            </View>
-          </TouchableOpacity>
+          <RenderItem item={item} onItemRemove={handleRemoveItem} />
         )}
       />
     </View>

@@ -8,6 +8,7 @@ import { ChatInfoScreen } from '../app/screens/chat-info-screen/chat-info-screen
 import { ChatScreen } from '../app/screens/chat-screen/chat-screen';
 import {
   ChatStackParamList,
+  ComponentsStackParamList,
   FeedStackParamList,
   ProfileStackParamList,
 } from './navigator';
@@ -19,11 +20,14 @@ import { SavedPostsScreen } from '../app/screens/saved-post-screen/saved-post-sc
 import { SettingsScreen } from '../app/screens/setting-screen/setting-screen';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, Text } from 'react-native';
+import ComponentsScreen from '../../components/ComponentsScreen';
 
 const Tab = createBottomTabNavigator();
+
 const FeedStack = createNativeStackNavigator<FeedStackParamList>();
 const ChatStack = createNativeStackNavigator<ChatStackParamList>();
 const ProfileStack = createNativeStackNavigator<ProfileStackParamList>();
+const ComponentsStack = createNativeStackNavigator<ComponentsStackParamList>();
 
 const ProfileStackNavigator = () => {
   return (
@@ -54,6 +58,15 @@ const FeedStackNavigator = () => {
       <FeedStack.Screen name="PostDetail" component={PostDetailScreen} />
       <FeedStack.Screen name="UserProfile" component={UserProfileScreen} />
     </FeedStack.Navigator>
+  );
+};
+
+const ComponentsStackNavigator = () => {
+  return (
+    <ComponentsStack.Navigator screenOptions={{ headerShown: false }}>
+      <ComponentsStack.Screen name="Components" component={ComponentsScreen} />
+      {/* <ComponentsStack.Screen name="Animations" component={AnimationsScreen} /> */}
+    </ComponentsStack.Navigator>
   );
 };
 
@@ -105,6 +118,7 @@ export const BottomTabs = () => {
       />
       <Tab.Screen name="Chats" component={ChatStackNavigator} />
       <Tab.Screen name="Profile" component={ProfileStackNavigator} />
+      <Tab.Screen name="Components" component={ComponentsStackNavigator} />
     </Tab.Navigator>
   );
 };

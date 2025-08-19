@@ -1,6 +1,6 @@
 {
   "extends": "@react-native/typescript-config",
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "packages/chit-chat/data"],
   "exclude": ["**/node_modules", "**/Pods"],
   "compilerOptions": {
     "jsx": "react-native"
